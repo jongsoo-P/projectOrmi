@@ -46,3 +46,43 @@
   text-align: center;
 }
 /* //resultCard */
+
+/* loadingView */
+#divLoadingBack {
+  position: absolute;
+  left:0;
+  top:0;
+  z-index: 9000;
+  width: 100%;
+  height: 100vh;
+  display: relative;
+  background-color: #000000;
+  opacity: 0.5;
+}
+
+#divLoading {
+  position: fixed;
+  content: "";
+  top:45%;
+  left:50%;
+  z-index: 9100;
+  transform: translate(-50%,-50%);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#divLoading img {
+  display: block;
+  width: 150px;
+  border-radius: 50px;
+}
+
+#divLoading p {
+  margin-top: 20px;
+  display: block;
+  border-radius: 50px;
+  color: #fff;
+}
+/* //loadingView */
