@@ -1,0 +1,48 @@
+/* resultCard */
+.resultCard {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 20px;
+}
+.resultCard div {
+  display: inline-flex;
+  width: 10%;
+  background-color: #6785b4;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  font-size: 20px;
+}
+.resultCard ul {
+  list-style: none;
+  width: 90%;
+}
+.resultCard ul li:last-child span:first-child {
+  border-top-right-radius: 20px;
+}
+.resultCard ul li:last-child span:last-child {
+  border-bottom-right-radius: 20px;
+}
+.resultCard ul li span:first-child {
+  background-color: #26a5b9;
+  height: 20px;
+  font-size: unset;
+}
+.resultCard ul li span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  height: 80px;
+  font-size: 20px;
+}
+.resultCard ul li{
+  float: left;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+/* //resultCard */

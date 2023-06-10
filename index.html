@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>제주 이디저디</title>
+</head>
+<body class="flex justify-center items-center">
+    <div class="w-full max-w-screen-lg min-w-[360px] px-4">
+        <header class="w-full max-w-screen-lg min-w-360 px-4 lg:px04 ">
+            <div class="flex justify-between px-4 lg:px04">
+              <a>
+                이디저디
+              </a>
+            </div>
+        </header>
+        <!-- body content -->
+        <div class="flex flex-col">
+            <!-- form part -->
+            <div class="flex flex-row p-4">
+                <!-- form part_main_pic -->
+                <div class="w-2/5">
+                    <img src="./images/main-pic-1.jpg" alt="제주도 돌하르방"/>
+                </div>
+                <!-- //form part_main_pic -->
+                <!-- form part_form -->
+                <div class="md:w-3/5 flex flex-col justify-start items-center py-4">
+                    <p class="text-xl mb-6">제주도 일정을 검색합니다.</p>
+                    <p class="text-sm text-gray-500 mb-6">(최대 14일까지 검색 가능합니다.)</p>
+                    <input class="border-solid border-2 w-4/5 mb-8 pl-4" type="text" name="days" id="days" placeholder="여행 기간을 입력해주세요."/>
+                    <button class="rounded-full w-2/5 bg-sky-400" id="btnSubmit">검색</button>
+                </div>
+                <!-- //form part_form -->
+            </div>
+            <!-- //form part -->
+            <!-- result part -->
+            <div class="resultPart" id="resultPart">
+            </div>
+            <!-- //result part -->
+        </main>
+        <!-- //body content -->
+    </div>
+</body>
+</html>
