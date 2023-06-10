@@ -11,10 +11,12 @@ async function btnClickEvent() {
     role: "user",
     content: `제주도 ${inputDays}일 일정`
   })
+  createLoadingView()
   const schedules = await chatGptAPI(apiUrl,apiData)
   for(const schedule of schedules){
     createResultCard(schedule)
   }
+  removeLoadingView()
 }
 
 document.getElementById("btnSubmit").addEventListener("click",btnClickEvent)
