@@ -10,7 +10,7 @@ body, body *{
 body::-webkit-scrollbar,body *::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera*/
 }
-body>div{
+body > div:first-child{
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 30px;
   margin: 10%;
@@ -55,6 +55,7 @@ body>div{
   display: block;
   border-radius: 50px;
   color: #fff;
+  word-break: keep-all;
 }
 /* //loadingView */
 
@@ -83,10 +84,10 @@ body>div{
 /* //typing animation */
 
 /* table */
-.tableDiv{
+#resultPart div{
   border: 1px solid #000000;
   border-radius: 15px;
-  margin: 0 auto;
+  margin: 20px auto;
   width: 100%;
   max-width: 800px;
   overflow: hidden;
