@@ -10,7 +10,7 @@ async function btnClickEvent() {
   const etc = document.getElementById("etc").value
   apiData.push({
     role: "user",
-    content: `${etc}, 제주도 ${inputDays}일 일정`
+    content: `'${etc}'을/를 반영한, 제주도 ${inputDays}일 일정 생성`
   })
   createLoadingView()
   const schedules = await chatGptAPI(apiUrl,apiData)
