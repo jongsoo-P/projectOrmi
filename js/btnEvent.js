@@ -8,9 +8,13 @@ async function btnClickEvent() {
   document.getElementById("resultPart").innerHTML = ""
   const inputDays = document.getElementById("days").value
   const etc = document.getElementById("etc").value
+  if(!(inputDays.match(/^\d*$/) && parseInt(inputDays) > 0 && parseInt(inputDays) < 15)){
+    alert("올바른 여행 일정을 선택하세요")
+    return
+  }
   apiData.push({
     role: "user",
-    content: `제주도 ${inputDays}일 일정 생성, '${etc}'`
+    content: `제주도 ${inputDays}일 여행 일정 생성, '${etc}'`
   })
   createLoadingView()
   const schedules = await chatGptAPI(apiUrl,apiData)
