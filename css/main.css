@@ -117,8 +117,25 @@ th {
 td {
   background-color: rgba(255, 255, 255, 0.5);
   color: black;
-  padding: 10px;
   text-align: center;
   vertical-align: middle;
 }
+
+  /* label */
+  table label {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+  }
+  table label:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  table label input{
+    display: none;
+  }
+  table :checked+p{
+    color:#ff8200;
+    text-decoration: line-through;
+  }
+  /* //label */
 /* //table */
