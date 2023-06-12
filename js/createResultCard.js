@@ -14,6 +14,7 @@ const theadData = ['','오전','점심메뉴','오후','저녁메뉴']
  */
 function createTable(answerData) {
   const resultPart = document.getElementById("resultPart")
+  const resultDiv = document.createElement("div")
   const resultTable = document.createElement("table")
 
   const tableHead = document.createElement("thead")
@@ -30,8 +31,8 @@ function createTable(answerData) {
     tableBody.appendChild(createTableRow("td",rowDataList))
   }
   resultTable.appendChild(tableBody)
-  
-  resultPart.appendChild(resultTable)
+  resultDiv.appendChild(resultTable)
+  resultPart.appendChild(resultDiv)
 }
 
 /**
