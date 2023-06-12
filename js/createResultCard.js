@@ -3,29 +3,59 @@
  * @param {json} answerData json 타입의 일정(schedule)
  * create resultCard
  */
-function createResultCard(answerData){
-  const schedulesKeys = Object.keys(answerData[Object.keys(answerData)[0]])
-  const schedules = answerData[Object.keys(answerData)[0]]
-  const resultPart = document.getElementById("resultPart")
-  const resultCard = document.createElement("div")
-  resultCard.classList.add("resultCard")
-  
-  const divDay = document.createElement("div")
-  divDay.innerText = Object.keys(answerData)[0]
-  resultCard.appendChild(divDay)
 
-  const ulSchedule = document.createElement("ul")
-  
-  for(const schedulesKey of Object.keys(schedules)){
-    const liScehdule = document.createElement("li")
-    const spanTime = document.createElement("span")
-    spanTime.innerText = schedulesKey;
-    liScehdule.appendChild(spanTime)
-    const spanContent = document.createElement("span")
-    spanContent.innerText = schedules[schedulesKey]
-    liScehdule.appendChild(spanContent)
-    ulSchedule.appendChild(liScehdule)
+/**
+ * table head data
+ */
+const theadData = ['','오전','점심메뉴','오후','저녁메뉴']
+
+/**
+ * @param {Array} answerData jsonArray
+ */
+function createTable(answerData) {
+  const resultPart = document.getElementById("resultPart")
+  const resultTable = document.createElement("table")
+
+  const tableHead = document.createElement("thead")
+  tableHead.appendChild(createTableRow("th",theadData))
+  resultTable.appendChild(tableHead)
+  const tableBody = document.createElement("tbody")
+  for(const [dayIdx,rowData] of answerData.entries()) {
+    const rowDataList = []
+    rowDataList.push(`DAY ${dayIdx+1}`)
+    const schedules = rowData[`DAY ${dayIdx+1}`]
+    for(const scheduleData in schedules){
+      rowDataList.push(schedules[scheduleData])
+    }
+    tableBody.appendChild(createTableRow("td",rowDataList))
   }
-  resultCard.appendChild(ulSchedule)
-  resultPart.appendChild(resultCard)
+  resultTable.appendChild(tableBody)
+  
+  resultPart.appendChild(resultTable)
+}
+
+/**
+ * 
+ * @param {String} tag tagName 
+ * @param {Array} rowData tableRow 입력 table data array
+ * @returns tr node
+ */
+function createTableRow(tag,rowData) {
+  const tableRow = document.createElement("tr")
+  for(const data of rowData) {
+    tableRow.appendChild(createTableData(tag,data))
+  }
+  return tableRow
+}
+
+/**
+ * 
+ * @param {String} tag tagName
+ * @param {String} data td inputText
+ * @returns td node
+ */
+function createTableData(tag,data) {
+  const resultTd = document.createElement(tag)
+  resultTd.innerText = data
+  return resultTd
 }
