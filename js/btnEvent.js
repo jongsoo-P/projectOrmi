@@ -10,11 +10,15 @@ async function btnClickEvent() {
   const etc = document.getElementById("etc").value
   apiData.push({
     role: "user",
-    content: `'${etc}'을/를 반영한, 제주도 ${inputDays}일 일정 생성`
+    content: `'${etc}', 제주도 ${inputDays}일 일정 생성`
   })
   createLoadingView()
   const schedules = await chatGptAPI(apiUrl,apiData)
-  createTable(schedules)
+  if(schedules["status"]==200){
+    createTable(schedules["result"])
+  }else{
+    alert("죄송합니다 검색에 문제가 발생했습니다.")
+  }
   removeLoadingView()
 }
 
