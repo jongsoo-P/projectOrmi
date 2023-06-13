@@ -14,10 +14,10 @@ async function chatGptAPI(url,data){
       redirect: "follow",
   })
   .then(res => {
-    console.log(res)
+    // console.log(res)
     return res.json()})
   .then(res => {
-    console.log(res.choices[0].message.content)
+    // console.log(res.choices[0].message.content)
     return {"status":200,"result":JSON.parse(res.choices[0].message.content)}
   })
   .catch(err => {

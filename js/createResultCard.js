@@ -1,10 +1,4 @@
 /**
- * 
- * @param {json} answerData json 타입의 일정(schedule)
- * create resultCard
- */
-
-/**
  * table head data
  */
 const theadData = ['','오전','점심메뉴','오후','저녁메뉴']
