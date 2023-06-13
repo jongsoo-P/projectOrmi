@@ -34,3 +34,7 @@ const apiData = [{
   "role": "user",
   "content": "문장은 빼고 위와 같은 json 형식으로 출력한다."
 }]
+
+const regenerationApiData = []
+
+const regenerationData = []

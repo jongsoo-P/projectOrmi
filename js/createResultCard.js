@@ -14,6 +14,7 @@ const theadData = ['','오전','점심메뉴','오후','저녁메뉴']
  */
 function createTable(answerData) {
   const resultPart = document.getElementById("resultPart")
+  resultPart.innerHTML =''
   const resultDiv = document.createElement("div")
   const resultTable = document.createElement("table")
 
@@ -34,12 +35,12 @@ function createTable(answerData) {
   resultTable.appendChild(tableBody)
   resultDiv.appendChild(resultTable)
 
-  const searchAgainBtn = document.createElement("button")
-  searchAgainBtn.id = "btnSearchAgain"
-  searchAgainBtn.addEventListener("click",searchAgain)
-  searchAgainBtn.innerText = "재생성"
+  const regenerationBtn = document.createElement("button")
+  regenerationBtn.id = "regenerationBtn"
+  regenerationBtn.addEventListener("click",regeneration)
+  regenerationBtn.innerText = "재생성"
   resultPart.appendChild(resultDiv)
-  resultPart.appendChild(searchAgainBtn)
+  resultPart.appendChild(regenerationBtn)
 }
 
 /**
