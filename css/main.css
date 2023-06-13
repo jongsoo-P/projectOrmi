@@ -83,6 +83,7 @@ body > div:first-child{
 }
 /* //typing animation */
 
+/* //resultPart */
 /* table */
 #resultPart div{
   border: 1px solid #000000;
@@ -139,3 +140,14 @@ td {
   }
   /* //label */
 /* //table */
+/* regenerationBtn */
+#regenerationBtn {
+  display: block;
+  width: 100px;
+  border-radius: 20px;
+  padding: 0.5rem;
+  background-color: rgb(56 189 248);
+  margin: 0 auto 10px;
+}
+/* //regenerationBtn */
+/* //resultPart */
