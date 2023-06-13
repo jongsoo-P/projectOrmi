@@ -27,3 +27,7 @@ async function btnClickEvent() {
 }
 
 document.getElementById("btnSubmit").addEventListener("click",btnClickEvent)
+
+async function searchAgain() {
+  console.log('click')
+}

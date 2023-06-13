@@ -23,28 +23,36 @@ function createTable(answerData) {
   const tableBody = document.createElement("tbody")
   for(const [dayIdx,rowData] of answerData.entries()) {
     const rowDataList = []
-    rowDataList.push(`DAY ${dayIdx+1}`)
-    const schedules = rowData[`DAY ${dayIdx+1}`]
+    const days = `DAY ${dayIdx+1}`
+    rowDataList.push(days)
+    const schedules = rowData[days]
     for(const scheduleData in schedules){
       rowDataList.push(schedules[scheduleData])
     }
-    tableBody.appendChild(createTableRow("td",rowDataList))
+    tableBody.appendChild(createTableRow("td",rowDataList,days))
   }
   resultTable.appendChild(tableBody)
   resultDiv.appendChild(resultTable)
+
+  const searchAgainBtn = document.createElement("button")
+  searchAgainBtn.id = "btnSearchAgain"
+  searchAgainBtn.addEventListener("click",searchAgain)
+  searchAgainBtn.innerText = "재생성"
   resultPart.appendChild(resultDiv)
+  resultPart.appendChild(searchAgainBtn)
 }
 
 /**
  * 
  * @param {String} tag tagName 
  * @param {Array} rowData tableRow 입력 table data array
+ * @param {String} days tableRow DAY name
  * @returns tr node
  */
-function createTableRow(tag,rowData) {
+function createTableRow(tag,rowData, days='') {
   const tableRow = document.createElement("tr")
-  for(const data of rowData) {
-    tableRow.appendChild(createTableData(tag,data))
+  for(const [idx,data] of rowData.entries()) {
+    tableRow.appendChild(createTableData(tag,data,idx,days))
   }
   return tableRow
 }
@@ -53,10 +61,26 @@ function createTableRow(tag,rowData) {
  * 
  * @param {String} tag tagName
  * @param {String} data td inputText
+ * 
+ * @param {Int} idx theadData idx
+ * @param {String} days tableRow DAY name
  * @returns td node
  */
-function createTableData(tag,data) {
+function createTableData(tag,data,idx=-1,days='') {
   const resultTd = document.createElement(tag)
-  resultTd.innerText = data
+  if(idx > 0 && tag === "td"){
+    const resultLabel = document.createElement("label")
+    const inputCheck = document.createElement("input")
+    inputCheck.type = "checkbox"
+    inputCheck.name = days
+    inputCheck.value = theadData[idx]
+    resultLabel.appendChild(inputCheck)
+    const resultText = document.createElement("p")
+    resultText.innerText = data
+    resultLabel.appendChild(resultText)
+    resultTd.appendChild(resultLabel)
+  }else{
+    resultTd.innerText = data
+  }
   return resultTd
 }
