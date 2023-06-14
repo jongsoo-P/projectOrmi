@@ -17,6 +17,13 @@ body > div:first-child{
   max-height: calc(100vh - 20%);
   overflow: scroll;
 }
+h1 {
+  font-size: 36px !important;
+  font-family: 'Do Hyeon', sans-serif;
+  color: rgba(38, 81, 255, 0.719);
+  line-height: 40px;
+  transform: translate(0,30px);
+}
 
 /* loadingView */
 #divLoadingBack {
