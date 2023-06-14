@@ -56,13 +56,15 @@
 <img src="/images/readme/readme-home.png" width="50%">
 
 - 여행 기간 선택 & 특이사항 입력
-<img src="/images/readme/readme-days.png" width="45%"><img src="/images/readme/readme-etc.png" width="45%">
+
+<img src="/images/readme/readme-days.png" width="45%"> <img src="/images/readme/readme-etc.png" width="45%">
 
 - 생성버튼 클릭 후 결과 화면
 <img src="/images/readme/readme-result.png" width="50%">
 
 - 테이블에서 일정 선택 후 재생성
-<img src="/images/readme/readme-td-select.png" width="45%"><img src="/images/readme/readme-td-select2.png" width="45%">
+
+<img src="/images/readme/readme-td-select.png" width="45%"> <img src="/images/readme/readme-td-select2.png" width="45%">
 
 
 ## 5. 추가 개선 사항
@@ -75,3 +77,4 @@
 
 ### JS / 기능 구현
 - chatGPT 답변 제어 개선(원하지 않는 답변 생성, 알맞지 않는 답변 생성)
+- 생성된 일정과 관련된 사진 첨부 
