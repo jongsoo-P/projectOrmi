@@ -15,6 +15,7 @@ function createTable(answerData) {
   const tableHead = document.createElement("thead")
   tableHead.appendChild(createTableRow("th",theadData))
   resultTable.appendChild(tableHead)
+  
   const tableBody = document.createElement("tbody")
   for(const [dayIdx,rowData] of answerData.entries()) {
     const rowDataList = []
@@ -28,13 +29,13 @@ function createTable(answerData) {
   }
   resultTable.appendChild(tableBody)
   resultDiv.appendChild(resultTable)
+  resultPart.appendChild(regenerationBtn)
 
   const regenerationBtn = document.createElement("button")
   regenerationBtn.id = "regenerationBtn"
   regenerationBtn.addEventListener("click",regeneration)
   regenerationBtn.innerText = "재생성"
   resultPart.appendChild(resultDiv)
-  resultPart.appendChild(regenerationBtn)
 }
 
 /**
