@@ -29,13 +29,13 @@ function createTable(answerData) {
   }
   resultTable.appendChild(tableBody)
   resultDiv.appendChild(resultTable)
-  resultPart.appendChild(regenerationBtn)
+  resultPart.appendChild(resultDiv)
 
   const regenerationBtn = document.createElement("button")
   regenerationBtn.id = "regenerationBtn"
   regenerationBtn.addEventListener("click",regeneration)
   regenerationBtn.innerText = "재생성"
-  resultPart.appendChild(resultDiv)
+  resultPart.appendChild(regenerationBtn)
 }
 
 /**
