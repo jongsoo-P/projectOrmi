@@ -12,6 +12,7 @@ async function btnClickEvent() {
   }
   regenerationApiData.length = 0
   apiData.map(data => regenerationApiData.push(data))
+  console.log(regenerationApiData)
   regenerationApiData.push({
     role: "user",
     content: `제주도 ${inputDays}일 여행 일정 생성, '${etc}'`
@@ -49,7 +50,7 @@ async function regeneration() {
     alert("재생성할 일정을 선택해주세요.")
     return
   }
-  regenerationContent = JSON.stringify(regenerationData) +"에서 " + regenerationContent + "새로운 결과로 변경해서 json만 답변"
+  regenerationContent = `새로운 제주도 일정을 생성해서, ${JSON.stringify(regenerationData)}에서 ${regenerationContent}를 변경해서 나머지 결과와 함께 json만 답변`
   regenerationApiData.push({
     role: "user",
     content: regenerationContent
